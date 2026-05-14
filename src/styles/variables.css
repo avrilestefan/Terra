@@ -1,0 +1,28 @@
+:root {
+  /* ── Paleta Terra ── dark teal + sage */
+  --bg:              #212121;
+  --surface-1:       #112124;
+  --surface-2:       #1c3035;
+  --border-subtle:   #1f3539;
+  --border-strong:   #2d4e53;
+
+  --text-1:          #EFF8F5;
+  --text-2:          #7CAAA0;
+  --text-3:          #4A706B;
+
+  --accent:          #74C5AB;   /* sage teal brand */
+  --success:         #4ade80;   /* disponible — verde */
+  --warning:         #F59E0B;   /* ocupado    — amarillo */
+  --danger:          #EF4444;   /* reservado  — rojo */
+
+  --accent-muted:    rgba(116, 197, 171, 0.10);
+  --success-muted:   rgba(74, 222, 128, 0.10);
+  --warning-muted:   rgba(245, 158, 11, 0.10);
+  --danger-muted:    rgba(239, 68, 68, 0.10);
+
+  /* ── Tipografía ── */
+  --radius:          5px;
+  --font-sans:       'Manrope', system-ui, sans-serif;
+  --font-display:    'Manrope', system-ui, sans-serif;
+  --font-mono:       'Manrope', 'JetBrains Mono', monospace;
+}

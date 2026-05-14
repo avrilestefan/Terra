@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#0B1929"/>
+  <!-- topo line 1 – outermost -->
+  <path d="M50,6 C65,4 81,14 88,28 C95,43 92,62 82,72 C75,79 64,83 57,87 C53,89 51,93 50,96 C49,93 47,89 43,87 C36,83 25,79 18,72 C8,62 5,43 12,28 C19,14 35,4 50,6Z" stroke="#22D3EE" stroke-width="0.9" opacity="0.2"/>
+  <!-- topo line 2 -->
+  <path d="M50,12 C63,10 77,19 84,32 C90,46 87,63 78,72 C72,78 62,82 56,85 C53,87 51,90 50,93 C49,90 47,87 44,85 C38,82 28,78 22,72 C13,63 10,46 16,32 C23,19 37,10 50,12Z" stroke="#22D3EE" stroke-width="1.05" opacity="0.38"/>
+  <!-- topo line 3 -->
+  <path d="M50,18 C61,16 73,24 79,36 C85,49 82,64 74,71 C68,76 59,80 54,82 C52,83 50.5,87 50,89 C49.5,87 48,83 46,82 C41,80 32,76 26,71 C18,64 15,49 21,36 C27,24 39,16 50,18Z" stroke="#22D3EE" stroke-width="1.25" opacity="0.58"/>
+  <!-- topo line 4 – innermost -->
+  <path d="M50,24 C59,22 69,29 74,40 C79,51 76,64 69,70 C64,74 57,77 53,79 C51.5,80 50.5,83 50,85 C49.5,83 48.5,80 47,79 C43,77 36,74 31,70 C24,64 21,51 26,40 C31,29 41,22 50,24Z" stroke="#22D3EE" stroke-width="1.5" opacity="0.8"/>
+  <!-- chimney -->
+  <rect x="32" y="27" width="5" height="14" stroke="#22D3EE" stroke-width="2"/>
+  <!-- roof -->
+  <polyline points="26,42 50,24 74,42" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- walls -->
+  <polyline points="30,42 30,59 70,59 70,42" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- pin stem -->
+  <line x1="50" y1="59" x2="50" y2="80" stroke="#22D3EE" stroke-width="4" stroke-linecap="round"/>
+  <!-- pin crossbar -->
+  <line x1="37" y1="80" x2="63" y2="80" stroke="#22D3EE" stroke-width="4" stroke-linecap="round"/>
+</svg>

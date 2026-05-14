@@ -1,0 +1,24 @@
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-available {
+  color: var(--accent);
+  background: var(--accent-muted);
+}
+
+.status-occupied {
+  color: var(--danger);
+  background: var(--danger-muted);
+}
+
+.status-reserved {
+  color: var(--warning);
+  background: var(--warning-muted);
+}

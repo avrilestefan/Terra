@@ -1,0 +1,228 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 10;
+  background: rgba(33, 33, 33, 0.92);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  backdrop-filter: blur(10px);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-logo-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.topbar-wordmark {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: 0.12em;
+}
+
+.topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-back {
+  background: transparent;
+  border: none;
+  color: var(--text-2);
+  font-size: 14px;
+  padding: 0 8px 0 0;
+  transition: color 0.15s;
+}
+
+.topbar-back:hover {
+  color: var(--text-1);
+}
+
+.bc-active {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-1);
+}
+
+.bc-inactive {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.bc-separator {
+  color: var(--border-strong);
+  font-size: 12px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pitch-control {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pitch-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  transition: all 0.15s;
+}
+
+.pitch-btn:hover {
+  color: var(--text-1);
+  background: var(--surface-2);
+}
+
+.pitch-btn.active {
+  color: var(--text-1);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--text-1);
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-2);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.icon-btn:hover,
+.icon-btn.active {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+/* Dropdown panels */
+.topbar-dropdown-wrap {
+  position: relative;
+}
+
+.topbar-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 200px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 8px;
+  z-index: 50;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+}
+
+.panel-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  padding: 4px 8px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 4px;
+}
+
+.filter-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.filter-row:hover {
+  background: var(--surface-2);
+}
+
+.filter-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.filter-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-1);
+  flex: 1;
+  text-align: left;
+}
+
+.filter-row.off .filter-label {
+  color: var(--text-3);
+}
+
+.filter-check {
+  font-size: 11px;
+  color: var(--accent);
+  width: 12px;
+}
+
+.settings-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-1);
+  transition: background 0.15s;
+}
+
+.settings-row:hover {
+  background: var(--surface-2);
+}
+
+.settings-row span:first-child {
+  color: var(--text-2);
+  width: 16px;
+  text-align: center;
+}

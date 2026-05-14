@@ -1,0 +1,199 @@
+.render-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.render-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.render-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.render-panel-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.render-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.render-divider {
+  width: 1px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.render-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  color: var(--text-3);
+  font-size: 13px;
+  font-family: var(--font-sans);
+}
+
+.render-empty button {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-2);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.render-empty button:hover {
+  background: var(--surface-2);
+}
+
+.render-error {
+  color: var(--danger);
+}
+
+.render-loading {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--surface-1);
+  overflow: hidden;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  top: 0;
+}
+
+.render-loading-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.download-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-1);
+  color: var(--text-2);
+  border-radius: var(--radius);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.download-btn:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+}
+
+.render-bar {
+  height: 48px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+  flex-shrink: 0;
+  background: var(--bg);
+}
+
+.style-tabs {
+  display: flex;
+}
+
+.style-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0 12px;
+  height: 48px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  transition: all 0.15s;
+}
+
+.style-tab.active {
+  color: var(--text-1);
+  border-bottom-color: var(--text-1);
+}
+
+.style-tab:hover {
+  color: var(--text-1);
+}
+
+.specs-input {
+  flex: 1;
+  height: 28px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0 10px;
+  color: var(--text-1);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  outline: none;
+}
+
+.specs-input::placeholder {
+  color: var(--text-3);
+}
+
+.render-btn {
+  height: 28px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-1);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  transition: background 0.15s;
+}
+
+.render-btn:hover {
+  background: var(--surface-2);
+}
