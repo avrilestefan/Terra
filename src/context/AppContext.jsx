@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react'
-import { fetchLots } from '../lib/api'
+import staticLots from '../data/lots'
 
 const initialState = {
   lots: [],
@@ -66,9 +66,7 @@ export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    fetchLots()
-      .then(lots => dispatch({ type: 'SET_LOTS', lots }))
-      .catch(err => console.error('No se pudieron cargar los lotes:', err))
+    dispatch({ type: 'SET_LOTS', lots: staticLots })
   }, [])
 
   return (
