@@ -40,26 +40,31 @@ export default function MapView() {
       }))
       map.current.addSource('lots', {
         type: 'geojson',
+        generateId: true,
         data: { type: 'FeatureCollection', features: initialFeatures }
       })
 
-      // Fill por estado
+      // Extrusión 3D por estado
       map.current.addLayer({
-        id: 'lots-fill',
-        type: 'fill',
+        id: 'lots-extrusion',
+        type: 'fill-extrusion',
         source: 'lots',
         paint: {
-          'fill-color': [
+          'fill-extrusion-color': [
             'match', ['get', 'status'],
-            'available', '#0D2E14',
-            'occupied',  '#1C1500',
-            'reserved',  '#2D0A0A',
-            '#112124'
+            'available', '#4ade80',
+            'occupied',  '#F59E0B',
+            'reserved',  '#EF4444',
+            '#74C5AB'
           ],
-          'fill-opacity': [
+          'fill-extrusion-height': [
             'case',
-            ['boolean', ['feature-state', 'hover'], false], 0.9,
-            0.6
+            ['boolean', ['feature-state', 'hover'], false], 4, 1.5
+          ],
+          'fill-extrusion-base': 0,
+          'fill-extrusion-opacity': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false], 0.85, 0.55
           ]
         }
       })
@@ -77,13 +82,13 @@ export default function MapView() {
             'reserved',  '#EF4444',
             '#2d4e53'
           ],
-          'line-width': 1.5
+          'line-width': 2.5
         }
       })
 
       // Hover
       let hoveredId = null
-      map.current.on('mousemove', 'lots-fill', e => {
+      map.current.on('mousemove', 'lots-extrusion', e => {
         if (e.features.length > 0) {
           if (hoveredId !== null) {
             map.current.setFeatureState({ source: 'lots', id: hoveredId }, { hover: false })
@@ -93,7 +98,7 @@ export default function MapView() {
           map.current.getCanvas().style.cursor = 'pointer'
         }
       })
-      map.current.on('mouseleave', 'lots-fill', () => {
+      map.current.on('mouseleave', 'lots-extrusion', () => {
         if (hoveredId !== null) {
           map.current.setFeatureState({ source: 'lots', id: hoveredId }, { hover: false })
         }
@@ -102,7 +107,7 @@ export default function MapView() {
       })
 
       // Click en lote
-      map.current.on('click', 'lots-fill', e => {
+      map.current.on('click', 'lots-extrusion', e => {
         const lotId = e.features[0].properties.id
         const lot = lots.find(l => l.id === lotId)
         dispatch({ type: 'SELECT_LOT', id: lotId })
@@ -116,7 +121,7 @@ export default function MapView() {
 
       // Click fuera de lotes
       map.current.on('click', e => {
-        const features = map.current.queryRenderedFeatures(e.point, { layers: ['lots-fill'] })
+        const features = map.current.queryRenderedFeatures(e.point, { layers: ['lots-extrusion'] })
         if (features.length === 0) {
           dispatch({ type: 'SELECT_LOT', id: null })
         }
@@ -181,7 +186,7 @@ export default function MapView() {
     if (!map.current) return
     const filter = ['in', ['get', 'status'], ['literal', state.activeFilters]]
     const applyFilter = () => {
-      if (map.current.getLayer('lots-fill')) map.current.setFilter('lots-fill', filter)
+      if (map.current.getLayer('lots-extrusion')) map.current.setFilter('lots-extrusion', filter)
       if (map.current.getLayer('lots-line')) map.current.setFilter('lots-line', filter)
     }
     if (map.current.isStyleLoaded()) {
